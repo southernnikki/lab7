@@ -1,0 +1,66 @@
+// The following programs were written by Nicole Carman for SP21 CSC 2134 Programming 1 With C++
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int choice;                 // Menu choice
+    char repeat,                // Loop a specific program? Y or N
+         overallResponse;       // Loop entire program? Y or N
+
+    do
+    {   // Display a menu
+        cout << "Program Menu\n" << endl;
+        cout << "1. Sum of Numbers" << endl;
+        cout << "2. Distance Traveled" << endl;
+        cout << "3. Speed Conversion Chart" << endl;
+        cout << "4. Pennies for Pay\n\n" << endl;
+        cout << "Please enter which program you would like to use: ";
+        cin >> choice;
+
+
+
+        // Use the menu selection to execute the correct program
+        if (choice == 1)
+        {
+            // Execute Programming Challenge 2: Sum of Numbers
+            // This program asks the user for a positive integer and uses loops to validate their input
+            // and calculates the sum of all the integers from 1 up to the number entered
+            int userNumber,
+            count,
+            total = 0;              // Starting total
+
+        do
+        {   // Gets user input
+            cout << "\nPlease enter a positive number: ";
+            cin >> userNumber;
+
+            // Displays an error message if the user doesn't enter a positive number
+            while (userNumber < 0)
+            {
+                cout << "\nWhoops! Please enter a positive number: ";
+                cin >> userNumber;
+            }
+
+            // Calculates the sum of all the integers from 1 up to the number the user entered (increment operator)
+            for (count = 1; count <= userNumber; count++)
+            {
+                cout << total
+                    << "+"
+                    << count
+                    << " = ";
+                total += count;
+                cout << total << endl;
+            }
+
+            // Displays the total
+            cout << "\nThe total is " << total << "!" << endl;
+
+            // Resets count to zero
+            total = 0;
+
+            // Does the user want to repeat this program?
+            cout << "\n\nWould you like to enter another number? (Y/N) ";
+            cin >> repeat;
+        } while (repeat == 'Y' || repeat == 'y');
+        return 0;
